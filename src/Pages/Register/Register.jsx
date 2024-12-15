@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 
-const Login = () => {
+const Register = () => {
 
-    const handleLogin = e => {
+    const handleRegister = e => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
@@ -14,8 +14,20 @@ const Login = () => {
         <div>
             <Navbar></Navbar>
             <div>
-                <h2 className="text-3xl text-center my-10">Please login</h2>
-                <form onSubmit={handleLogin} className="card-body mx-auto md:w-3/4 lg:w-1/2">
+                <h2 className="text-3xl text-center my-10">Please Register</h2>
+                <form onSubmit={handleRegister} className="card-body mx-auto md:w-3/4 lg:w-1/2">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -32,13 +44,13 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn btn-primary">Register</button>
                     </div>
                 </form>
-                <p className="text-center">Don't have an account ? <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
+                <p className="text-center">Already have an account ? <Link className="text-blue-600 font-bold" to='/login'>Login</Link></p>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;
