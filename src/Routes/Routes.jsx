@@ -5,7 +5,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import News from "../Pages/News/News";
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
     {
         path:'/',
         element: <Root></Root>,
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('news.json')
+                loader: () => fetch('/news.json')
             },
             {
                 path:'/news/:id',
@@ -32,4 +32,4 @@ const router = createBrowserRouter([
     }
 ]);
 
-export default router;
+export default routes;
